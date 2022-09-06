@@ -1,0 +1,28 @@
+error[preamble-re-description-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
+ --> input.md:4:13
+  |
+4 | description: Floop ARC-55 and ARC-99
+  |             ^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
+  |
+  = info: the pattern in question: `(?i)ARC[\s]*[0-9]+`
+error[preamble-re-description-arc]: proposals must be referenced with the form `ARC-N` (not `arc-N`)
+ --> input.md:4:13
+  |
+4 | description: Floop ERC55 and arc99
+  |             ^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
+  |
+  = info: the pattern in question: `(?i)ARC[\s-]*[0-9]+`
+error[preamble-re-title-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
+ --> input.md:3:7
+  |
+3 | title: A sample extension for ARC-1 and ARC-5
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
+  |
+  = info: the pattern in question: `(?i)ARC[\s]*[0-9]+`
+error[preamble-re-title-arc]: proposals must be referenced with the form `ARC-N` (not `arc-N`)
+ --> input.md:3:7
+  |
+3 | title: A sample extension for ARC-1 and ARC-5
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
+  |
+  = info: the pattern in question: `(?i)ARC[\s-]*[0-9]+`

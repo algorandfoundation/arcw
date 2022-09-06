@@ -1,0 +1,12 @@
+error[markdown-link-status]: proposal `arc-0020.md` is not stable enough for a `status` of `Last Call`
+  --> input.md
+   |
+15 | This is the abstract for the arc which needs [arc-20](./arc-0020.md).
+   |
+   = help: because of this link, this proposal's `status` must be one of: `Draft`, `Stagnant`
+error[markdown-link-status]: proposal `arc-2048.md` is not stable enough for a `status` of `Last Call`
+  --> input.md
+   |
+21 | This is the specification for the arc, [for some reason](./arc-2048.md).
+   |
+   = help: because of this link, this proposal's `status` must be one of: `Draft`, `Stagnant`
