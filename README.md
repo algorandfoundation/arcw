@@ -1,9 +1,7 @@
 arcw
 ====
 
-The [arc] validator.
-
-An engine which ensures [arc](https://algorandfoundation/ARCs) meet certain requirements.
+An engine which ensures [ARC](https://algorandfoundation/ARCs) meet certain requirements.
 
 ## Getting Started
 
