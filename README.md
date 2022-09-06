@@ -1,7 +1,7 @@
 arcw
 ====
 
-An engine which ensures [ARC](https://algorandfoundation/ARCs) meet certain requirements.
+An engine which ensures [ARC](https://github.com/algorandfoundation/ARCs) meet certain requirements.
 
 ## Getting Started
 
