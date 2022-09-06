@@ -141,7 +141,6 @@ where
         let root = origin_path.parent().unwrap_or_else(|| Path::new("."));
 
         let key = root.join(path);
-        println!("{}", key.as_path().display());
         let inner = match self.arcs.get(key.as_path()) {
             Some(Ok(i)) => i,
             Some(Err(e)) => return Err(e),
