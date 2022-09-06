@@ -8,7 +8,7 @@ An engine which ensures [ARC](https://algorandfoundation/ARCs) meet certain requ
 To install `arcw` and validate the ARCs repository:
 
 ```console
-git clone https://github.com/lightclient/arcw.git
+git clone git@github.com:algorandfoundation/arcw.git
 cargo install --path=arcw arcw
 arcw /path/to/ARCs
 ```
