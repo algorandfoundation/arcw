@@ -44,16 +44,16 @@ impl<'n> Lint for RequiresStatus<'n> {
             .map(str::parse::<u64>)
             .filter_map(Result::ok)
             .map(|n| {
-                let mut number = format!("arc-{}.md", n) ;
+                let mut number = format!("arc-{}.md", n);
                 if n < 10 {
-                    number = format!("arc-{}{}.md", "000", n) ; 
+                    number = format!("arc-{}{}.md", "000", n);
                 } else if n < 100 {
-                    number = format!("arc-{}{}.md", "00", n) ;  
+                    number = format!("arc-{}{}.md", "00", n);
                 } else if n < 1000 {
-                    number = format!("arc-{}{}.md", "0", n) ;
+                    number = format!("arc-{}{}.md", "0", n);
                 }
-                number}
-                )
+                number
+            })
             .map(PathBuf::from)
             .for_each(|p| ctx.fetch(p));
 
@@ -86,17 +86,16 @@ impl<'n> Lint for RequiresStatus<'n> {
 
             let key = match item.trim().parse::<u64>() {
                 Ok(k) => {
-                    let mut number = format!("arc-{}.md", k) ;
+                    let mut number = format!("arc-{}.md", k);
                     if k < 10 {
-                        number = format!("arc-{}{}.md", "000", k) ; 
+                        number = format!("arc-{}{}.md", "000", k);
                     } else if k < 100 {
-                        number = format!("arc-{}{}.md", "00", k) ;  
+                        number = format!("arc-{}{}.md", "00", k);
                     } else if k < 1000 {
-                        number = format!("arc-{}{}.md", "0", k) ;
+                        number = format!("arc-{}{}.md", "0", k);
                     }
                     PathBuf::from(number)
                 }
-                
                 _ => continue,
             };
             let arc = match ctx.arc(&key) {

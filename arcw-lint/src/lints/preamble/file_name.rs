@@ -32,18 +32,17 @@ impl<'n> Lint for FileName<'n> {
         };
 
         let mut number = format!("{}", field.value().trim());
-        let int_number: i32  = number.as_str().parse().unwrap();
+        let int_number: i32 = number.as_str().parse().unwrap();
 
         if int_number < 10 {
-            number = format!("{}{}", "000", number) ;
+            number = format!("{}{}", "000", number);
         } else if int_number < 100 {
-            number = format!("{}{}", "00", number) ;
-        }else if int_number < 1000 {
-            number = format!("{}{}", "0", number) ;
+            number = format!("{}{}", "00", number);
+        } else if int_number < 1000 {
+            number = format!("{}{}", "0", number);
         }
-        
 
-        let expected = format!("{}{}{}", self.prefix, number , self.suffix);
+        let expected = format!("{}{}{}", self.prefix, number, self.suffix);
 
         if file_name == expected.as_str() {
             return Ok(());
