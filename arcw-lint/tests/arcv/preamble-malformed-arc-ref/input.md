@@ -1,7 +1,7 @@
 ---
 arc: 1
 title: A sample extension for arc 1 and ARC-5
-description: Floop ERC55 and arc99
+description: Floop ARC55 and arc99
 author: John Doe (@johndoe), Jenny Doe <jenny.doe@example.com>
 discussions-to: https://github.com/algorandfoundation/ARCs/issues/
 status: Last Call
@@ -30,7 +30,7 @@ These are the backwards compatibility concerns for the arc.
 These are the test cases for the arc.
 
 ## Reference Implementation
-This is the implementation for the arc, but `ERC721` should be allowed.
+This is the implementation for the arc, but `ARC721` should be allowed.
 
 ## Security Considerations
 These are the security considerations for the arc.

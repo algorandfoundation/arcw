@@ -1,3 +1,15 @@
+error[markdown-link-first]: the first match of the given pattern must be a link
+  --> input.md
+   |
+18 | This is the motivation for the arc, which extends ARC-721.
+   |
+   = info: the pattern in question: `(?i)ARC-[0-9]+`
+error[markdown-re-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
+  --> input.md
+   |
+15 | This is the abstract for the arc, which extends ARC721.
+   |
+   = info: the pattern in question: `(?i)ARC[\s]*[0-9]+`
 error[markdown-re-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
   --> input.md
    |
@@ -7,12 +19,6 @@ error[markdown-re-arc-dash]: proposals must be referenced with the form `ARC-N` 
 error[markdown-re-arc-not-arc]: proposals must be referenced with the form `ARC-N` (not `arc-N`)
   --> input.md
    |
-15 | This is the abstract for the arc, which extends ERC721.
+27 | These are the backwards compatibility concerns for the arc1234.
    |
-   = info: the pattern in question: `(?i)ARC[\s-]*[0-9]+`
-error[markdown-re-arc-not-arc]: proposals must be referenced with the form `ARC-N` (not `arc-N`)
-  --> input.md
-   |
-18 | This is the motivation for the arc, which extends ARC-721.
-   |
-   = info: the pattern in question: `(?i)ARC[\s-]*[0-9]+`
+   = info: the pattern in question: `arc[\s-]*[0-9]+`

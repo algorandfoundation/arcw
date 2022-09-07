@@ -1,28 +1,34 @@
-error[preamble-re-description-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
- --> input.md:4:13
-  |
-4 | description: Floop ARC-55 and ARC-99
-  |             ^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
-  |
-  = info: the pattern in question: `(?i)ARC[\s]*[0-9]+`
 error[preamble-re-description-arc]: proposals must be referenced with the form `ARC-N` (not `arc-N`)
  --> input.md:4:13
   |
-4 | description: Floop ERC55 and arc99
+4 | description: Floop ARC55 and arc99
   |             ^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
   |
   = info: the pattern in question: `(?i)ARC[\s-]*[0-9]+`
-error[preamble-re-title-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
- --> input.md:3:7
+error[preamble-re-description-arc-dash]: proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)
+ --> input.md:4:13
   |
-3 | title: A sample extension for ARC-1 and ARC-5
-  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
+4 | description: Floop ARC55 and arc99
+  |             ^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
   |
   = info: the pattern in question: `(?i)ARC[\s]*[0-9]+`
-error[preamble-re-title-arc]: proposals must be referenced with the form `ARC-N` (not `arc-N`)
+error[preamble-re-title-arc]: preamble header `title` should not contain `ARC-`
  --> input.md:3:7
   |
-3 | title: A sample extension for ARC-1 and ARC-5
+3 | title: A sample extension for arc 1 and ARC-5
   |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
   |
   = info: the pattern in question: `(?i)ARC[\s-]*[0-9]+`
+error[preamble-re-title-arc-dash]: preamble header `title` should not contain `ARC`
+ --> input.md:3:7
+  |
+3 | title: A sample extension for arc 1 and ARC-5
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
+  |
+  = info: the pattern in question: `(?i)ARC[\s]*[0-9]+`
+error[preamble-requires-ref-title]: proposals mentioned in preamble header `title` must appear in `requires`
+ --> input.md:3:41
+  |
+3 | title: A sample extension for arc 1 and ARC-5
+  |                                         ^^^^^ mentioned here
+  |

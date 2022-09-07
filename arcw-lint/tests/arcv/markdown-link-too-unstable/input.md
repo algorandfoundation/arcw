@@ -12,10 +12,10 @@ created: 2020-01-01
 ---
 
 ## Abstract
-This is the abstract for the arc which needs [arc-20](./arc-0020.md).
+This is the abstract for the arc which needs [ARC-20](./arc-0020.md).
 
 ## Motivation
-This is the motivation for the arc, which links to [arc-1337](./arc-1337.md).
+This is the motivation for the arc, which links to [ARC-1337](./arc-1337.md).
 
 ## Specification
 This is the specification for the arc, [for some reason](./arc-2048.md).

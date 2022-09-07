@@ -4,4 +4,4 @@ error[preamble-re-description]: preamble header `description` should not contain
 4 | description: A standard description
   |             ^^^^^^^^^^^^^^^^^^^^^^^ prohibited pattern was matched
   |
-  = info: the pattern in question: `(?i)standar\w*\b`
+  = info: the pattern in question: `standar\w*\b`

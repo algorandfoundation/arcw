@@ -1,4 +1,0 @@
-error[preamble-req]: preamble is missing header(s): `discussions-to`
---> input.md
- |
- |

@@ -12,7 +12,7 @@ created: 2020-01-01
 ---
 
 ## Abstract
-This is the abstract for the arc, which extends ERC721.
+This is the abstract for the arc, which extends ARC721.
 
 ## Motivation
 This is the motivation for the arc, which extends ARC-721.
@@ -30,7 +30,7 @@ These are the backwards compatibility concerns for the arc1234.
 These are the test cases for the arc.
 
 ## Reference Implementation
-This is the implementation for the arc, but `ERC721` should be allowed.
+This is the implementation for the arc, but `ARC721` should be allowed.
 
 ## Security Considerations
 These are the security considerations for the arc.
