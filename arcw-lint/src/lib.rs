@@ -67,16 +67,16 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
         ("preamble-re-title-arc", preamble::Regex {
             name: "title",
             mode: regex::Mode::Excludes,
-            pattern: r"(?i)arc[\s-]*[0-9]+",
-            message: "proposals must be referenced with the form `ARC-N` (not `arc-N`)",
+            pattern: r"(?i)ARC[\s-]*[0-9]+",
+            message: "preamble header `title` should not contain `ARC-`",
         }.boxed()),
         (
             "preamble-re-title-arc-dash",
             preamble::Regex {
                 name: "title",
                 mode: regex::Mode::Excludes,
-                pattern: r"(?i)arc[\s]*[0-9]+",
-                message: "proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)",
+                pattern: r"(?i)ARC[\s]*[0-9]+",
+                message: "preamble header `title` should not contain `ARC`",
             }.boxed(),
         ),
         (
@@ -84,14 +84,14 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
             preamble::Regex {
                 name: "description",
                 mode: regex::Mode::Excludes,
-                pattern: r"(?i)arc[\s]*[0-9]+",
+                pattern: r"(?i)ARC[\s]*[0-9]+",
                 message: "proposals must be referenced with the form `ARC-N` (not `ARCN` or `ARC N`)",
             }.boxed(),
         ),
         ("preamble-re-description-arc", preamble::Regex {
             name: "description",
             mode: regex::Mode::Excludes,
-            pattern: r"(?i)arc[\s-]*[0-9]+",
+            pattern: r"(?i)ARC[\s-]*[0-9]+",
             message: "proposals must be referenced with the form `ARC-N` (not `arc-N`)",
         }.boxed()),
         ("preamble-re-description", preamble::Regex {
@@ -147,7 +147,6 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                 "title",
                 "description",
                 "author",
-                "discussions-to",
                 "status",
                 "type",
                 "created",

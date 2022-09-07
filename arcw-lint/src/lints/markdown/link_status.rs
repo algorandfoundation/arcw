@@ -33,7 +33,7 @@ impl<'n> LinkStatus<'n> {
     }
 
     fn find_links<'a>(node: &'a AstNode<'a>) -> impl 'a + Iterator<Item = (u32, PathBuf)> {
-        let re = Regex::new("(?i)arc-([0-9]+).md$").unwrap();
+        let re = Regex::new("(?i)ARC-([0-9]+).md$").unwrap();
 
         node.descendants()
             // Find all URLs and the lines they appear on.
