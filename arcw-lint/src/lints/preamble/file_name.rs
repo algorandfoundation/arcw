@@ -31,7 +31,7 @@ impl<'n> Lint for FileName<'n> {
                 .expect("origin did not have a file name"),
         };
 
-        let mut number = format!("{}", field.value().trim());
+        let mut number = field.value().trim().to_string();
         let int_number: i32 = number.as_str().parse().unwrap();
 
         if int_number < 10 {
