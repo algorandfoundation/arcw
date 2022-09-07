@@ -32,15 +32,20 @@ impl<'n> Lint for FileName<'n> {
         };
 
         let mut number = field.value().trim().to_string();
-        let int_number: i32 = number.as_str().parse().unwrap();
 
-        if int_number < 10 {
-            number = format!("{}{}", "000", number);
-        } else if int_number < 100 {
-            number = format!("{}{}", "00", number);
-        } else if int_number < 1000 {
-            number = format!("{}{}", "0", number);
+        if number.chars().all(char::is_numeric){
+            let int_number: i32 = number.as_str().parse().unwrap();
+            if int_number < 10 {
+                number = format!("{}{}", "000", number);
+            } else if int_number < 100 {
+                number = format!("{}{}", "00", number);
+            } else if int_number < 1000 {
+                number = format!("{}{}", "0", number);
+            }
         }
+        
+
+
 
         let expected = format!("{}{}{}", self.prefix, number, self.suffix);
 
