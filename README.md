@@ -106,7 +106,8 @@ error[preamble-order]: preamble header `description` must come after `title`
 | `preamble-req`                      | All required preamble headers are present.                                                    |
 | `preamble-req-category`             | The `category` header is present only when required.                                          |
 | `preamble-req-last-call-deadline`   | The `last-call-deadline` header is present only when required.                                |
-| `preamble-req-withdrawal-reason`    | The `withdrawal-reason` header is present only when required.                                 |
+| `preamble-req-withdrawal-reason`    | The `withdrawal-reason` header is present only when required.
+| `preamble-req-deprecated-reason`    | The `deprecated-reason` header is present only when required.                                 |
 | `preamble-requires-ref-description` | Proposals mentioned in the `description` header appear in the `requires` header.              |
 | `preamble-requires-ref-title`       | Proposals mentioned in the `title` header appear in the `requires` header.                    |
 | `preamble-requires-status`          | arcs listed in `requires` have statuses further along than the current proposal.              |

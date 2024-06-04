@@ -1,14 +1,14 @@
 ---
-arc: 1000
+arc: 1
 title: A sample proposal
-description: This proposal is a sample that should be considered
-author: John Doe (@johndoe), Jenny Doe <jenny.doe@example.com>
+description: A sample description
+author: John Doe (@johndoe)
 discussions-to: https://github.com/algorandfoundation/ARCs/issues/
-status: Withdrawn
+status: Deprecated
 type: Standards Track
 category: Core
 created: 2020-01-01
-withdrawal-reason: not good
+deprecated-reason: New ARC is better
 ---
 
 ## Abstract

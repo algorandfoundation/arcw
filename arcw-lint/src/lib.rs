@@ -141,6 +141,15 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
             .boxed(),
         ),
         (
+            "preamble-len-withdrawal-reason",
+            preamble::Length {
+                name: "withdrawal-reason",
+                min: Some(2),
+                max: Some(140),
+            }
+            .boxed(),
+        ),
+        (
             "preamble-req",
             preamble::Required(&[
                 "arc",
@@ -168,6 +177,8 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                 "created",
                 "requires",
                 "withdrawal-reason",
+                "replaces",
+                "superseded-by",
             ])
             .boxed(),
         ),
@@ -204,6 +215,15 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
             .boxed(),
         ),
         (
+            "preamble-req-superseded-by",
+            preamble::RequiredIfEq {
+                when: "status",
+                equals: "Deprecated",
+                then: "superseded-by",
+            }
+            .boxed(),
+        ),
+        (
             "preamble-enum-status",
             preamble::OneOf {
                 name: "status",
@@ -214,6 +234,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                     "Final",
                     "Stagnant",
                     "Withdrawn",
+                    "Deprecated",
                     "Living",
                 ],
             }
@@ -244,7 +265,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                     &["Draft", "Stagnant"],
                     &["Review"],
                     &["Last Call"],
-                    &["Final", "Withdrawn", "Living"],
+                    &["Final", "Withdrawn", "Living","Deprecated"],
                 ]
             }.boxed(),
         ),
@@ -328,7 +349,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                     &["Draft", "Stagnant"],
                     &["Review"],
                     &["Last Call"],
-                    &["Final", "Withdrawn", "Living"],
+                    &["Final", "Withdrawn", "Living","Deprecated"],
                 ]
             }.boxed(),
         )
