@@ -174,12 +174,27 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                 "last-call-deadline",
                 "type",
                 "category",
+                "sub-category",
                 "created",
                 "requires",
                 "withdrawal-reason",
                 "replaces",
                 "superseded-by",
             ])
+            .boxed(),
+        ),
+        (
+            "preamble-enum-sub-category",
+            preamble::OneOf {
+                name: "sub-category",
+                values: &[
+                    "General",
+                    "Token",
+                    "Smart Contract",
+                    "Explorer",
+                    "Wallet"
+                ],
+            }
             .boxed(),
         ),
         ("preamble-date-created", preamble::Date("created").boxed()),
