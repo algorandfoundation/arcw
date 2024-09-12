@@ -189,8 +189,8 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                 name: "sub-category",
                 values: &[
                     "General",
-                    "Token",
-                    "Smart Contract",
+                    "Asa",
+                    "Application",
                     "Explorer",
                     "Wallet"
                 ],
