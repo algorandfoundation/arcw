@@ -117,6 +117,26 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
             }.boxed(),
         ),
         ("preamble-list-author", preamble::List("author").boxed()),
+        ("preamble-list-extends", preamble::List("extends").boxed()),
+        (
+            "preamble-uint-extends",
+            preamble::UintList("extends").boxed(),
+        ),
+        ("preamble-list-extended-by", preamble::List("extended-by").boxed()),
+        (
+            "preamble-uint-extended-by",
+            preamble::UintList("extended-by").boxed(),
+        ),
+        ("preamble-list-replaces", preamble::List("replaces").boxed()),
+        (
+            "preamble-uint-replaces",
+            preamble::UintList("replaces").boxed(),
+        ),
+        ("preamble-list-superseded-by", preamble::List("superseded-by").boxed()),
+        (
+            "preamble-uint-superseded-by",
+            preamble::UintList("superseded-by").boxed(),
+        ),
         ("preamble-list-requires", preamble::List("requires").boxed()),
         (
             "preamble-uint-requires",
@@ -178,6 +198,8 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                 "created",
                 "requires",
                 "withdrawal-reason",
+                "extended-by",
+                "extends",
                 "replaces",
                 "superseded-by",
             ])
