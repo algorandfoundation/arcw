@@ -252,15 +252,6 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
             .boxed(),
         ),
         (
-            "preamble-req-superseded-by",
-            preamble::RequiredIfEq {
-                when: "status",
-                equals: "Deprecated",
-                then: "superseded-by",
-            }
-            .boxed(),
-        ),
-        (
             "preamble-enum-status",
             preamble::OneOf {
                 name: "status",
