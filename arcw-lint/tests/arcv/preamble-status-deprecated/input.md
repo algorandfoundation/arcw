@@ -8,7 +8,6 @@ status: Deprecated
 type: Standards Track
 category: Core
 created: 2020-01-01
-deprecated-reason: New ARC is better
 ---
 
 ## Abstract
