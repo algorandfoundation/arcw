@@ -192,6 +192,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                 "discussions-to",
                 "status",
                 "last-call-deadline",
+                "idle-since",
                 "type",
                 "category",
                 "sub-category",
@@ -234,6 +235,19 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
             preamble::Date("last-call-deadline").boxed(),
         ),
         (
+            "preamble-req-idle-since",
+            preamble::RequiredIfEq {
+                when: "status",
+                equals: "Idle",
+                then: "idle-since",
+            }
+            .boxed(),
+        ),
+        (
+            "preamble-date-dle-since",
+            preamble::Date("idle-since").boxed(),
+        ),
+        (
             "preamble-req-category",
             preamble::RequiredIfEq {
                 when: "type",
@@ -259,6 +273,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                     "Draft",
                     "Review",
                     "Last Call",
+                    "Idle",
                     "Final",
                     "Stagnant",
                     "Withdrawn",
@@ -293,7 +308,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                     &["Draft", "Stagnant"],
                     &["Review"],
                     &["Last Call"],
-                    &["Final", "Withdrawn", "Living","Deprecated"],
+                    &["Final", "Withdrawn", "Living","Deprecated", "Idle"],
                 ]
             }.boxed(),
         ),
@@ -377,7 +392,7 @@ pub fn default_lints() -> impl Iterator<Item = (&'static str, Box<dyn Lint>)> {
                     &["Draft", "Stagnant"],
                     &["Review"],
                     &["Last Call"],
-                    &["Final", "Withdrawn", "Living","Deprecated"],
+                    &["Final", "Withdrawn", "Living","Deprecated", "Idle"],
                 ]
             }.boxed(),
         )
